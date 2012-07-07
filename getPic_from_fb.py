@@ -136,10 +136,8 @@ if __name__ == '__main__':
 
     ## 6. create HTML
     print "create HTML start"
-    HTML_TEMPLATE = 'template.html'
     OUT = os.path.basename('get_picture.html')
-
-    html = open(HTML_TEMPLATE).read() % (' '.join(photo_src[0:]))
+    html = "<html><body>%s</body></html>" % (' '.join(photo_src[0:]))
     f = open(os.path.join(os.getcwd(), 'out', OUT), 'w')
     f.write(html)
     f.close()
@@ -147,4 +145,6 @@ if __name__ == '__main__':
     ## if you want to show these pictures in a browser, please execute following  command at your terminal.
     ## `open out/get_picture.html`
     #webbrowser.open('file://' + f.name)
+
+    print "Done!"
 
